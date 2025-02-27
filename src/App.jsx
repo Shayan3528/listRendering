@@ -1,12 +1,10 @@
-import Quote from "./Component/Quote"
+import Quote from "./Component/Quote";
 function App() {
-  
-
   return (
     <>
-      <Quote/>
+      <Quote />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
