@@ -1,32 +1,71 @@
-import { customers } from "../data/damiPostData";
+import { useState } from "react";
+let initialCounters = [0, 0, 0];
+
+// export default function Quote() {
+//   const [counters, setCounters] = useState(initialCounters);
+
+//   function handleClick(index) {
+//     const nextCounter = counters.map((c, i) => {
+//       if (i === index) {
+//         return c + 1;
+//       } else{
+//         return c;
+//       }
+//     });
+
+//     setCounters(nextCounter);
+
+//   }
+
+//   return (
+//     <>
+//       {counters.map((counter, i) => (
+//         <li key={i}>
+//           {" "}
+//           {counter}
+//           <button
+//             onClick={() => {
+//               handleClick(i);
+//             }}
+//           >
+//             +1
+//           </button>
+//         </li>
+//       ))}
+//     </>
+//   );
+// }
 
 export default function Quote() {
-  let output = [];
-  const items = customers.map((customer) => (
-    <ul key={customer.id}>
-      <h3>Name: {customer.f_name + " " + customer.l_name}</h3>
-      <h4>Gender:{customer.gender} </h4>
-      <h4>Age:{customer.age} </h4>
-      <h5>Married:{customer.married ? " YES" : " NO"} </h5>
-      <h5>Purched Items: </h5>
-      {customer.purched.map((purches) => (
-        <ul key={purches.id}>
-          <li>{purches}</li>
-        </ul>
-      ))}
-    </ul>
-  ));
-  items.forEach((item,index) => {
-    output.push(<hr key={index + "-separator"} />);
-    output.push(<p key={index + "-text"}> {item}</p>);
-  });
+  const [counters, setCounter] = useState([...initialCounters]);
 
-  output.shift();
+  function handleClickButton(index) {
+    const nextCounter = counters.map((c, i) => {
+      if (i === index) {
+        return c + 1;
+      } else {
+        return c;
+      }
+    });
+
+    setCounter(nextCounter);
+  }
 
   return (
-    <div>
-      <h1> Customers Information</h1>
-      {output}
-    </div>
+    <>
+      {counters.map((counter, i) => (
+        <li key={i}>
+          {" "}
+          {counter}
+          <button
+            onClick={() => {
+              handleClickButton(i);
+            }}
+          >
+            +1
+          </button>
+        </li>
+      ))}
+    </>
   );
 }

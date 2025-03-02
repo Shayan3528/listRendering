@@ -1,3 +1,7 @@
+import img1 from "../Asset/Anna_Frank.jpg";
+import img2 from "../Asset/ballon.jpg";
+import img3 from "../Asset/lady.jpg";
+import img5 from "../Asset/panda.jpg";
 export const customers = [
   {
     id: 1,
@@ -8,6 +12,7 @@ export const customers = [
     age: 32,
     expence: 500,
     purched: ["Shampo", "Toys", "Books"],
+    image: img1,
   },
   {
     id: 2,
@@ -16,6 +21,7 @@ export const customers = [
     gender: "M",
     married: false,
     age: 40,
+    image: img2,
     expence: 5000,
     purched: ["Chips", "Toys", "Books", "Brush", "Shirt"],
   },
@@ -26,6 +32,7 @@ export const customers = [
     gender: "M",
     married: true,
     age: 35,
+    image: img3,
     expence: 30000,
     purched: ["Phone", "Toys", "Books", "water", "pen"],
   },
@@ -33,10 +40,11 @@ export const customers = [
     id: 4,
     f_name: "Bob",
     l_name: "Dilan",
-    gender: "M",
+    gender: "F",
     married: false,
     age: 45,
     expence: 1000,
+    image: img5,
     purched: ["CD", "Music Player", "Books", "water", "T-shirt"],
   },
 ];
